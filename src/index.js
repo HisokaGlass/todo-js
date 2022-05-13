@@ -1,6 +1,12 @@
-import { saludar } from './js/componentes.js'
 import './styles.css';
 
-const nombre = 'Carlos Hdz';
+import { Todo, TodoList } from './classes';
+import { crearTodoHtml } from './js/componentes';
 
-saludar(nombre);
+
+export const todoList = new TodoList();
+
+// todoList.todos.forEach(todo => crearTodoHtml(todo)); es lo mismo
+todoList.todos.forEach(crearTodoHtml);
+
+console.log('todos', todoList.todos);
